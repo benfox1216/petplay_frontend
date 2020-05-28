@@ -10,6 +10,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Run bundler
-          command: bundle install
+          command: gem install bundler
       - ruby/bundle-install
