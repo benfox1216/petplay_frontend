@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   get '/', to: 'welcome#index'
 
+  get '/profile/:id', to: 'users#show'
+
+  get '/login', to: 'sessions#show'
+
   get '/auth/:provider/callback', to: 'google#create'
-  # get '/auth/failure', to: redirect('/')
 end
