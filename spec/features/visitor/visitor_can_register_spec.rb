@@ -6,11 +6,9 @@ RSpec.describe 'As a visitor' do
       visit '/'
 
       expect(page).to have_content("Welcome To PetPlay")
-      expect(page).to have_button("Register")
-      expect(page).to have_button("Register With Google")
-      expect(page).to have_button("Login")
+      expect(page).to have_button("Login With Google")
 
-      click_button 'Register With Google'
+      click_button 'Login With Google'
 
 
     end
