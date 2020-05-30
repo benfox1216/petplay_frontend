@@ -17,6 +17,7 @@ class DistanceService
 
   def get_response(origin, destination)
     conn.get do |req|
+      req.params['units'] = 'imperial'
       req.params['origins'] = origin[:zip_code]
       req.params['destinations'] = destination[:zip_code]
     end
