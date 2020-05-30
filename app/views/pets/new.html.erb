@@ -1,0 +1,15 @@
+<h3>Add A Pet:</h3>
+<%= form_with(url: "/pets") do %>
+  <%= label_tag("Type") %>
+  <%= text_field_tag(:type) %><br>
+  <%= label_tag("Name") %>
+  <%= text_field_tag(:name) %><br>
+  <%= label_tag("Age") %>
+  <%= text_field_tag(:age) %><br>
+  <%= label_tag("Breed") %>
+  <%= text_field_tag(:breed) %><br>
+  <%= label_tag("Size") %>
+  <%= text_field_tag(:size) %> lbs.<br>
+  
+  <%= submit_tag("Submit") %>
+<% end %>

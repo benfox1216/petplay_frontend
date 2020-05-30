@@ -11,4 +11,6 @@
   <p>Zipcode: <%= @user.zipcode %></p>
 <% end %>
 
-<button type="submit" formaction="/pets/new">Add A Pet</button>
+<form action="/pets/new">
+    <input type="submit" value="Add A Pet"/>
+</form>

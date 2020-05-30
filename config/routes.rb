@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#show'
 
   get '/auth/:provider/callback', to: 'google#create'
+  
+  resources :pets, only: [:new, :create]
 end
