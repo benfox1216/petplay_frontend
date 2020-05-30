@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :zipcode, zipcode: { country_code: :us }
+  validates :zipcode, zipcode: { country_code: :us }, presence: true
 
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_initialize do |user|
