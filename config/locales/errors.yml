@@ -1,0 +1,3 @@
+errors:
+  messages:
+    invalid_zipcode: Invalid zipcode, please try again.
