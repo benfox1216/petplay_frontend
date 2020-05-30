@@ -1,14 +1,23 @@
 class DistanceService
   def by_location(origin, destination)
-    binding.pry
     get_distance(origin, destination)
   end
 
   private
 
   def get_distance(origin, destination)
+    formatted_distance_data(origin, destination)
+  end
+
+  def formatted_distance_data(origin, destination)
     json = parse_json(get_response(origin, destination))
-    binding.pry
+
+    {
+      origin: json[:origin_addresses].join,
+      destination: json[:destination_addresses].join,
+      distance: json[:rows].first[:elements].first[:distance][:text],
+      duration: json[:rows].first[:elements].first[:duration][:text]
+    }
   end
 
   def parse_json(response)
@@ -18,8 +27,8 @@ class DistanceService
   def get_response(origin, destination)
     conn.get do |req|
       req.params['units'] = 'imperial'
-      req.params['origins'] = origin[:zip_code]
-      req.params['destinations'] = destination[:zip_code]
+      req.params['origins'] = origin[:search_origin]
+      req.params['destinations'] = destination[:search_destination]
     end
   end
 
