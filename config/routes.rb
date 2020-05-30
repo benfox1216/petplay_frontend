@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
 
   get '/profile/:id', to: 'users#show'
+  post '/profile/:id/zip', to: 'users#zip'
 
   get '/login', to: 'sessions#show'
 
