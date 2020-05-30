@@ -8,6 +8,7 @@ class DistanceService
 
   def get_distance(origin, destination)
     json = parse_json(get_response(origin, destination))
+    binding.pry
   end
 
   def parse_json(response)
@@ -16,14 +17,15 @@ class DistanceService
 
   def get_response(origin, destination)
     conn.get do |req|
-      # params
+      req.params['origins'] = origin[:zip_code]
+      req.params['destinations'] = destination[:zip_code]
     end
   end
 
   def conn
     Faraday.new(
-      # url:
-      # params:
+      url: 'https://maps.googleapis.com/maps/api/distancematrix/json',
+      params: { key: ENV['GOOGLE_API_KEY'] }
     )
   end
 end
