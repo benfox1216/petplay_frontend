@@ -4,7 +4,8 @@ class PetsController < ApplicationController
   end
   
   def create
-    pet = Pet.create(pet_params)
+    pet = current_user.pets.create(pet_params)
+    
     if pet.save
       flash[:success] = 'Your pet was added!'
       redirect_to "/profile/#{pet.user.id}"
