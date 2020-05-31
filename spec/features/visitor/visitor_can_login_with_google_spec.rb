@@ -4,9 +4,11 @@ RSpec.feature "user logs in" do
   before(:all) do
     OmniAuth.config.test_mode = true
   end
+
   before(:each) do
     OmniAuth.config.mock_auth[:google] = nil
   end
+
   after(:all) do
     OmniAuth.config.test_mode = false
   end
@@ -30,6 +32,18 @@ RSpec.feature "user logs in" do
     click_button "Login With Google"
 
     expect(page).to have_content("Bob")
+    expect(page).to have_content("Logged in with Google!")
     expect(page).to have_button("Log Out")
+  end
+
+  scenario "failing to login with google" do
+    OmniAuth.config.mock_auth[:google_oauth2] = :invalid_credentials
+
+    visit root_path
+
+    click_button "Login With Google"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Failed to connect to Google")
   end
 end
