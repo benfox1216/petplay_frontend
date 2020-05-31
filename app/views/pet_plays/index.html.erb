@@ -1,0 +1,17 @@
+<div class="content-wrapper">
+  <div class="content">
+    <% @pet_plays.each_with_index do |pet_play, index| %>
+      <div id="petplay-<% index + 1 %>">
+        <h2><%= pet_play.title %></h2>
+        <div class="pet-players-wrapper">
+          <%= list_pet_players(pet_play.pet_players) %>
+          <% binding.pry %>
+
+        </div>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>
