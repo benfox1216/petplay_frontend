@@ -3,11 +3,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  #flash message is not working
   def zip
     @user = User.find(params[:id])
     update = @user.update(zipcode: user_params[:zipcode])
-    if user_params[:zipcode]
+    if update
       redirect_to "/profile/#{@user.id}"
     else
       flash[:error] = 'Invalid zipcode, please try again.'

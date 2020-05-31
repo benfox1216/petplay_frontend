@@ -10,35 +10,46 @@
     <%= stylesheet_link_tag 'https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'%>
     <%= stylesheet_link_tag '/layouts/marketing/styles.css'%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
-  <body>
+<body>
+  <header>
+      <div class="header">
+          <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+              <%= link_to 'PetPlays:MVP', "/", class: 'pure-menu-heading' %>
 
-    <div class="header">
-        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <%= link_to 'PetPlays:MVP', "/", class: 'pure-menu-heading' %>
+              <ul class="pure-menu-list">
+                  <li class="pure-menu-item"><%= link_to 'Main', "/", class: 'pure-menu-link' %></li>
+                  <li class="pure-menu-item"><%= link_to 'Log Out', "/logout", method: 'delete', class: 'pure-menu-link' %></li>
+              </ul>
+          </div>
+      </div>
+  </header>
 
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item"><%= link_to 'Main', "/", class: 'pure-menu-link' %></li>
-                <li class="pure-menu-item"><%= link_to 'Log Out', "/logout", method: 'delete', class: 'pure-menu-link' %></li>
-            </ul>
-        </div>
-    </div>
-
-  <main class="px4">
-    <div class="flash-message">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg.html_safe, class: name %>
-      <% end %>
-    </div>
+  <section>
+    <div class="content-container">
+      <div class="content">
+        <main class="px4">
+          <div class="flash-message">
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg.html_safe, class: name %>
+        <% end %>
+           </div>
 
     <%= yield %>
-    
-    <div class="footer l-box is-center">
-        View the source of this layout to learn more. Made with luv by Turing Students.
-    </div>
-  </main>
 
-  </body>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer l-box is-center">
+      View the source of this layout to learn more. Made with luv by Turing Students.
+    </div>
+  </footer>
+
+</body>
 </html>
+
+
