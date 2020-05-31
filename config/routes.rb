@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get "/auth/failure", to: "google#create"
   delete "/logout" => "google#destroy"
 
-  get '/petplays', to: 'petplays#index'
+  get '/petplays', to: 'pet_plays#index'
 end
