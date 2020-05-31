@@ -5,10 +5,12 @@ class PetsController < ApplicationController
   
   def create
     pet = Pet.create(pet_params)
-    
-    if tutorial.save
+    if pet.save
       flash[:success] = 'Your pet was added!'
-      redirect_to "/"
+      redirect_to "/profile/#{pet.user.id}"
+    else
+      flash[:error] = 'Pet not added. Missing fields or incorrect entry.
+      Please try again.'
     end
   end
   

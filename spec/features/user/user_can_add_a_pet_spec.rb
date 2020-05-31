@@ -7,11 +7,11 @@ describe "As a user" do
     visit "/profile/#{user.id}"
     click_button 'Add A Pet'
     
-    fill_in 'Name', with: 'Franco'
-    fill_in 'Species', with: 'Cat'
+    fill_in 'Name', with: 'Iceman'
+    fill_in 'Species', with: 'Dog'
     fill_in 'Age', with: '9'
-    fill_in 'Breed', with: 'Tuxedo'
-    fill_in 'Size', with: '9'
+    fill_in 'Breed', with: 'Siberian Husky'
+    fill_in 'Size', with: 'Medium'
     click_on 'Add Pet'
   end
 end
