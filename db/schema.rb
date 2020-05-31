@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20200530223635) do
     t.integer "age"
     t.string "breed"
     t.string "size"
+    t.string "about_me"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pets_on_user_id"

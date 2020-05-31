@@ -7,5 +7,6 @@ FactoryBot.define do
     age { Faker::Number.within(range: 1..13) }
     breed { Faker::Creature::Dog.breed }
     size { Faker::Creature::Dog.size }
+    about_me { "I love to chase everything!" }
   end
 end
