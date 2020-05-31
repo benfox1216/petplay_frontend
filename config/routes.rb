@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#show'
 
   get '/auth/:provider/callback', to: 'google#create'
+  get "/auth/failure", to: "google#create"
+  delete "/logout" => "google#destroy"
 end
