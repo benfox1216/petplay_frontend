@@ -36,6 +36,9 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+
+# User PureCSS Framework
+gem 'purecss-rails'
 gem 'validates_zipcode'
 
 group :development, :test do

@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'google#create'
   
   resources :pets, only: [:new, :create]
+  
+  get "/auth/failure", to: "google#create"
+  delete "/logout" => "google#destroy"
 end
