@@ -12,6 +12,7 @@ class PetsController < ApplicationController
     else
       flash[:error] = 'Pet not added. Missing fields or incorrect entry.
       Please try again.'
+      redirect_to "/pets/new"
     end
   end
   

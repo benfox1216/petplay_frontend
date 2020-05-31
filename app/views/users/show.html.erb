@@ -17,11 +17,13 @@
 
 <% if @user.pets %>
   <% @user.pets.each do |pet| %>
-    Name: <%= pet.name %><br>
-    Species: <%= pet.species %><br>
-    Age: <%= pet.age %><br>
-    Breed: <%= pet.breed %><br>
-    Size: <%= pet.size %><br><br>
+    <div class="pet-<%= pet.id %>">
+      Name: <%= pet.name %><br>
+      Species: <%= pet.species %><br>
+      Age: <%= pet.age %><br>
+      Breed: <%= pet.breed %><br>
+      Size: <%= pet.size %><br><br>
+    </div>
   <% end %>
 <% end %>
 
