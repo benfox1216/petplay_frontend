@@ -1,5 +1,5 @@
 class PetPlaysController < ApplicationController
   def index
-    binding.pry
+    @pet_plays = PetPlay.all
   end
 end
