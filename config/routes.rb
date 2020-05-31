@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#show'
 
   get '/auth/:provider/callback', to: 'google#create'
+  
+  resources :pets, only: [:new, :create]
+  
   get "/auth/failure", to: "google#create"
   delete "/logout" => "google#destroy"
 end

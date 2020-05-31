@@ -26,12 +26,6 @@
         </div>
     </div>
 
-    <%= yield %>
-
-    <div class="footer l-box is-center">
-        View the source of this layout to learn more. Made with luv by Turing Students.
-    </div>
-
   <main class="px4">
     <div class="flash-message">
       <% flash.each do |name, msg| %>
@@ -40,9 +34,11 @@
     </div>
 
     <%= yield %>
+    
+    <div class="footer l-box is-center">
+        View the source of this layout to learn more. Made with luv by Turing Students.
+    </div>
   </main>
 
   </body>
 </html>
-
-

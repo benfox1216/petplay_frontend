@@ -7,7 +7,25 @@
     <%= text_field_tag(:zipcode) %>
     <%= submit_tag("Submit") %>
   <% end %>
-  <% else %>
+<% else %>
   <p>Zipcode: <%= @user.zipcode %></p>
 <% end %>
+
+<form action="/pets/new">
+    <input type="submit" value="Add A Pet"/>
+</form>
+
+<% if @user.pets %>
+  <% @user.pets.each do |pet| %>
+    <div class="pet-<%= pet.id %>">
+      Name: <%= pet.name %><br>
+      Species: <%= pet.species %><br>
+      Age: <%= pet.age %><br>
+      Breed: <%= pet.breed %><br>
+      Size: <%= pet.size %><br><br>
+      About me: <%= pet.about_me %>
+    </div>
+  <% end %>
+<% end %>
+
 <%= button_to 'Log Out', "/logout", method: 'delete' %>
