@@ -17,7 +17,7 @@
 
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="">PetPlays:MVP</a>
+            <%= link_to 'PetPlays:MVP', "/", class: 'pure-menu-heading' %>
 
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><%= link_to 'Main', "/", class: 'pure-menu-link' %></li>
@@ -28,5 +28,8 @@
 
     <%= yield %>
 
+    <div class="footer l-box is-center">
+        View the source of this layout to learn more. Made with luv by Turing Students.
+    </div>
   </body>
 </html>
