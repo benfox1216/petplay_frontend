@@ -15,15 +15,6 @@
 
   <body>
 
-  <main class="px4">
-    <div class="flash-message">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg.html_safe, class: name %>
-      <% end %>
-    </div>
-
-    <%= yield %>
-  </main>
     <div class="header">
         <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
             <%= link_to 'PetPlays:MVP', "/", class: 'pure-menu-heading' %>
@@ -35,14 +26,6 @@
         </div>
     </div>
 
-    <%= yield %>
-
-    <div class="footer l-box is-center">
-        View the source of this layout to learn more. Made with luv by Turing Students.
-    </div>
-<<<<<<< HEAD
-=======
-
   <main class="px4">
     <div class="flash-message">
       <% flash.each do |name, msg| %>
@@ -51,10 +34,11 @@
     </div>
 
     <%= yield %>
+    
+    <div class="footer l-box is-center">
+        View the source of this layout to learn more. Made with luv by Turing Students.
+    </div>
   </main>
 
->>>>>>> 4138596f9dde7029184f9a27ce0c0bae279650fe
   </body>
 </html>
-
-

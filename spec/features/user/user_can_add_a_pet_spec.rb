@@ -2,8 +2,12 @@ require 'rails_helper'
 
 describe "As a user" do
   it "I can add a pet" do
-    user = create(:user)
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    # user = create(:user)
+    
+    user = User.create(name: "Bob", email: "bob@example",
+                        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/1200px-Stick_Figure.svg.png",
+                        google_token: "abc123", zipcode: "80012")
+    #allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     
     visit "/profile/#{user.id}"
     
@@ -57,9 +61,11 @@ describe "As a user" do
   
   it "I will get a flash message if a pet is not created" do
     user = create(:user)
+    
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     
     visit "/profile/#{user.id}"
+    save_and_open_page
     click_button 'Add A Pet'
     
     fill_in 'Name', with: 'Iceman'
