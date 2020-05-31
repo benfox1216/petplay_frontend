@@ -7,10 +7,10 @@ class UsersController < ApplicationController
   def zip
     @user = User.find(params[:id])
     update = @user.update(zipcode: user_params[:zipcode])
-    if user_params[:zipcode].nil?
-      flash[:error] = 'Invalid zipcode, please try again.'
+    if user_params[:zipcode]
       redirect_to "/profile/#{@user.id}"
     else
+      flash[:error] = 'Invalid zipcode, please try again.'
       redirect_to "/profile/#{@user.id}"
     end
   end

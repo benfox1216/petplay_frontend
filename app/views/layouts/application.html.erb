@@ -31,5 +31,18 @@
     <div class="footer l-box is-center">
         View the source of this layout to learn more. Made with luv by Turing Students.
     </div>
+
+  <main class="px4">
+    <div class="flash-message">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg.html_safe, class: name %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </main>
+
   </body>
 </html>
+
+
