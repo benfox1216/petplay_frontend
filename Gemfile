@@ -36,6 +36,7 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'rake'
 
 # User PureCSS Framework
 gem 'purecss-rails'
@@ -51,6 +52,8 @@ group :development, :test do
   gem 'pry'
   gem 'launchy'
   gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
