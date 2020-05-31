@@ -36,6 +36,7 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
+gem 'rake'
 
 # User PureCSS Framework
 gem 'purecss-rails'

@@ -6,6 +6,7 @@ describe "As a user" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     
     visit "/profile/#{user.id}"
+    
     click_button 'Add A Pet'
     
     fill_in 'Name', with: 'Iceman'
