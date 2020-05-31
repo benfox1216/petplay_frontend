@@ -5,10 +5,28 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag '/css/pure/pure-min.css'%>
+    <%= stylesheet_link_tag '/css/pure/grids-responsive-min.css'%>
+    <%= stylesheet_link_tag 'https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'%>
+    <%= stylesheet_link_tag '/layouts/marketing/styles.css'%>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="">PetPlays:MVP</a>
+
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><%= link_to 'Main', "/", class: 'pure-menu-link' %></li>
+                <li class="pure-menu-item"><%= link_to 'Log Out', "/logout", method: 'delete', class: 'pure-menu-link' %></li>
+            </ul>
+        </div>
+    </div>
+
     <%= yield %>
+
   </body>
 </html>
