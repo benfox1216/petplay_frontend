@@ -6,13 +6,13 @@ class GoogleController < ApplicationController
       session[:user_id] = user.id
       redirect_to "/profile/#{user.id}", notice: 'Logged in with Google!'
     else
-      redirect_to '/', notice: 'Failed to connect to Google'
+      redirect_to root_path, notice: 'Failed to connect to Google'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/'
+    redirect_to root_path
   end
 
   private
