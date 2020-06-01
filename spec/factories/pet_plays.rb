@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :pet_play do
     association :user
 
-    title { "Big Dogs Meetup" }
+    title { Faker::Book.title }
     pet_players { "List of users attending" }
     location { "Burberry Park" }
   end
