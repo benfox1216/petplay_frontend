@@ -1,6 +1,6 @@
 <div class="content-container">
   <div class="content">
-  <h1><%= @user.name %></h1>
+    <img class="pure-img-responsive" src= <%= @user.image %>><span><h1><%= @user.name %></h1></span>
     <p>Email: <%= @user.email %></p>
 
 <% if @user.zipcode == '00000' %>
@@ -12,6 +12,7 @@
 <% else %>
   <p>Zipcode: <%= @user.zipcode %></p>
 <% end %>
+<br/>
 
 <form action="/pets/new">
     <input type="submit" value="Add A Pet"/>
@@ -24,12 +25,11 @@
       Species: <%= pet.species %><br>
       Age: <%= pet.age %><br>
       Breed: <%= pet.breed %><br>
-      Size: <%= pet.size %><br><br>
+      Size: <%= pet.size %><br>
       About me: <%= pet.about_me %>
     </div>
+        <br/>
   <% end %>
 <% end %>
-
-<%= button_to 'Log Out', "/logout", method: 'delete' %>
   </div>
 </div>
