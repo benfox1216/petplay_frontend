@@ -59,41 +59,37 @@ RSpec.describe 'As a user' do
 
     visit '/petplays'
     expect(current_path).to eql('/petplays')
+    expect(page).to have_content('There are 3 PetPlays near 80202')
 
-    # within find(".content") do
-      # expect(page).to have_css('h2.content-head')
-      expect(page).to have_content('There are 3 PetPlays near 80202')
+    within("div#pet-play-1") do
+      expect(page).to have_content('PetPlay Test 1')
 
-      # within("div#pet-play-1") do
-        expect(page).to have_content('PetPlay Test 1')
+      within('.pet-players-wrapper') do
+        expect(page).to have_content('PetPlayer 1A')
+        expect(page).to have_content('PetPlayer 1B')
+        expect(page).to have_content('PetPlayer 1C')
+      end
+    end
 
-        # within('pet-players-wrapper') do
-          expect(page).to have_content('PetPlayer 1A')
-          expect(page).to have_content('PetPlayer 1B')
-          expect(page).to have_content('PetPlayer 1C')
-        # end
-      # end
+    within('#pet-play-2') do
+      expect(page).to have_content('PetPlay Test 2')
 
-      # within('#pet-play-2') do
-        expect(page).to have_content('PetPlay Test 2')
+      within('.pet-players-wrapper') do
+        expect(page).to have_content('PetPlayer 2A')
+        expect(page).to have_content('PetPlayer 2B')
+        expect(page).to have_content('PetPlayer 2C')
+      end
+    end
 
-        # within('pet-players-wrapper') do
-          expect(page).to have_content('PetPlayer 2A')
-          expect(page).to have_content('PetPlayer 2B')
-          expect(page).to have_content('PetPlayer 2C')
-        # end
-      # end
+    within('#pet-play-3') do
+      expect(page).to have_content('PetPlay Test 3')
 
-      # within('#pet-play-3') do
-        expect(page).to have_content('PetPlay Test 3')
-
-        # within('pet-players-wrapper') do
-          expect(page).to have_content('PetPlayer 3A')
-          expect(page).to have_content('PetPlayer 3B')
-          expect(page).to have_content('PetPlayer 3C')
-        # end
-      # end
-    # end
+      within('.pet-players-wrapper') do
+        expect(page).to have_content('PetPlayer 3A')
+        expect(page).to have_content('PetPlayer 3B')
+        expect(page).to have_content('PetPlayer 3C')
+      end
+    end
   end
 end
 

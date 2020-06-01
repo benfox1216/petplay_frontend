@@ -15,6 +15,14 @@ ActiveRecord::Schema.define(version: 20200531153430) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "pet_plays", force: :cascade do |t|
+    t.string "title"
+    t.string "pet_players"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pets", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
@@ -26,14 +34,6 @@ ActiveRecord::Schema.define(version: 20200531153430) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pets_on_user_id"
-  end
-
-  create_table "pet_plays", force: :cascade do |t|
-    t.string "title"
-    t.string "pet_players"
-    t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
