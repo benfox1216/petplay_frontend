@@ -61,7 +61,7 @@ RSpec.describe 'As a user' do
     expect(current_path).to eql('/petplays')
     expect(page).to have_content('There are 3 PetPlays near 80202')
 
-    within("div#pet-play-1") do
+    within "#pet-play-1" do
       expect(page).to have_content('PetPlay Test 1')
 
       within('.pet-players-wrapper') do
@@ -92,4 +92,3 @@ RSpec.describe 'As a user' do
     end
   end
 end
-
