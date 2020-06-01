@@ -1,0 +1,13 @@
+<h2 class="content-head">There are <%= @pet_plays.count %> PetPlays near <%= current_user.zipcode %></h2>
+
+<% @pet_plays.each_with_index do |pet_play, index| %>
+  <div id="pet-play-<%= index + 1 %>">
+    <h2 class="pet-play-head"><%= pet_play.title %></h2>
+
+    <div class="pet-players-wrapper">
+      <% list_pet_players(pet_play.pet_players).each do |player| %>
+        <p class="player-name"><%= player %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
