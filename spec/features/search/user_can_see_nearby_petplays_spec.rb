@@ -23,7 +23,8 @@ RSpec.describe 'As a user' do
 
     petplay1 = PetPlay.create(title: 'PetPlay Test 1',
                               pet_players: "#{petplayer1A.id}, #{petplayer1B.id}, #{petplayer1C.id}",
-                              location: '80202')
+                              location: '80202',
+                              user_id: petplayer1A.id)
 
     petplayer2A = User.create(name: 'PetPlayer 2A', email: 'petplayer2a@example',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/1200px-Stick_Figure.svg.png',
@@ -39,7 +40,8 @@ RSpec.describe 'As a user' do
 
     petplay2 = PetPlay.create(title: 'PetPlay Test 2',
                               pet_players: "#{petplayer2A.id}, #{petplayer2B.id}, #{petplayer2C.id}",
-                              location: '80202')
+                              location: '80202',
+                              user_id: petplayer2A.id)
 
     petplayer3A = User.create(name: 'PetPlayer 3A', email: 'petplayer3a@example',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Stick_Figure.svg/1200px-Stick_Figure.svg.png',
@@ -55,7 +57,8 @@ RSpec.describe 'As a user' do
 
     petplay3 = PetPlay.create(title: 'PetPlay Test 3',
                               pet_players: "#{petplayer3A.id}, #{petplayer3B.id}, #{petplayer3C.id}",
-                              location: '80202')
+                              location: '80202',
+                              user_id: petplayer3A.id)
 
     visit '/petplays'
     expect(current_path).to eql('/petplays')
