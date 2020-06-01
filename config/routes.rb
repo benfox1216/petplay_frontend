@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   delete "/logout" => "google#destroy"
 
   get '/petplays', to: 'pet_plays#index'
+  get '/petplays/:id', to: 'pet_plays#show'
 end
