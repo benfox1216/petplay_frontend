@@ -1,0 +1,16 @@
+{
+  "destination":
+    "3833 Vrain St, Denver, CO 80212, USA"
+    ,
+  "origin":
+    "1756 Blake St, Denver, CO 80202, USA"
+   ,
+  "distance": {
+    "text": "5.8 km",
+    "value": 5759
+  },
+  "duration": {
+    "text": "11 mins",
+    "value": 682
+  }
+}

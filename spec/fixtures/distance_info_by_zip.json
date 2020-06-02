@@ -1,0 +1,18 @@
+{
+  "destination":
+    "Denver, CO 80212, USA"
+  ,
+  "origin":
+    "Denver, CO 80202, USA"
+  ,
+
+  "distance": {
+    "text": "10.4 km",
+    "value": 10441
+  },
+
+  "duration": {
+    "text": "12 mins",
+    "value": 695
+  }
+}
