@@ -33,7 +33,6 @@ RSpec.feature "user logs in" do
 
     expect(page).to have_content("Bob")
     expect(page).to have_content("Logged in with Google!")
-    expect(page).to have_button("Log Out")
   end
 
   scenario "failing to login with google" do
