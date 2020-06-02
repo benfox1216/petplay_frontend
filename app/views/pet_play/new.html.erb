@@ -1,0 +1,17 @@
+<h3>Add A PetPlay:</h3>
+
+<%= form_for [@PetPlay] do |f| %>
+  <%= f.label :Title %>
+  <%= f.text_field :Title %><br>
+  <%= f.label :Location %>
+  <%= f.text_field :Location %><br>
+  <%= f.label :Date %>
+  <%= f.text_field :Date %><br>
+  <%= f.label :Time %>
+  <%= f.text_field :Time %><br>
+  <%= f.label :discription%>
+  <%= f.text_area :discription %><br>
+
+  <%= f.submit "Create"%>
+<% end %>
+  

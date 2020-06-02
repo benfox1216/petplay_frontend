@@ -17,6 +17,10 @@
     <input type="submit" value="Add A Pet"/>
 </form>
 
+<form action="/petplays/new">
+    <input type="submit" value="Add A PetPlay"/>
+</form>
+
 <% if @user.pets %>
   <% @user.pets.each do |pet| %>
     <div class="pet-<%= pet.id %>">

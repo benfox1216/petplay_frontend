@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post '/profile/:id/zip', to: 'users#zip'
 
   get '/login', to: 'sessions#show'
+  
+  get '/petplays/new', to: 'pet_play#new'
 
   get '/auth/:provider/callback', to: 'google#create'
   
