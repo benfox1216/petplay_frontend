@@ -2,52 +2,47 @@ require 'rails_helper'
 
 RSpec.describe 'Google Distance Service' do
   it 'can get distance between origin & destination by zip code' do
-    service = DistanceService.new
 
-    expect(service.class).to eql(DistanceService)
+    json_response = File.read('spec/fixtures/distance_info_by_zip.json')
+    stub_request(:get, "https://maps.googleapis.com/maps/api/distancematrix/json").
+        to_return(status: 200, body: json_response)
+    json = JSON.parse(json_response, symbolize_names: true)
 
-    origin = { search_origin: 80202 }
-    destination = { search_destination: 80212 }
-    location1 = service.by_location(origin, destination)
+    expect(json.class).to eql(Hash)
+    expect(json.count).to eql(4)
 
-    expect(location1.class).to eql(Hash)
-    expect(location1.count).to eql(4)
+    expect(json).to have_key :origin
+    expect(json[:origin]).to eql("Denver, CO 80202, USA")
 
-    expect(location1).to have_key :origin
-    expect(location1[:origin]).to eql("Denver, CO 80202, USA")
+    expect(json).to have_key :destination
+    expect(json[:destination]).to eql("Denver, CO 80212, USA")
 
-    expect(location1).to have_key :destination
-    expect(location1[:destination]).to eql("Denver, CO 80212, USA")
+    expect(json).to have_key :distance
+    expect(json[:distance][:text]).to eql("10.4 km")
 
-    expect(location1).to have_key :distance
-    expect(location1[:distance]).to eql("6.5 mi")
-
-    expect(location1).to have_key :duration
-    expect(location1[:duration]).to eql("12 mins")
+    expect(json).to have_key :duration
+    expect(json[:duration][:text]).to eql("12 mins")
   end
 
   it 'can get distance between origin & destination by gps coordinates' do
-    service = DistanceService.new
+    json_response = File.read('spec/fixtures/distance_info_by_coords.json')
+    stub_request(:get, "https://maps.googleapis.com/maps/api/distancematrix/json").
+        to_return(status: 200, body: json_response)
+    json = JSON.parse(json_response, symbolize_names: true)
 
-    expect(service.class).to eql(DistanceService)
+    expect(json.class).to eql(Hash)
+    expect(json.count).to eql(4)
 
-    origin = { search_origin: '39.752, -104.997' }
-    destination = { search_destination: '39.770, -105.047' }
-    location1 = service.by_location(origin, destination)
+    expect(json).to have_key :origin
+    expect(json[:origin]).to eql("1756 Blake St, Denver, CO 80202, USA")
 
-    expect(location1.class).to eql(Hash)
-    expect(location1.count).to eql(4)
+    expect(json).to have_key :destination
+    expect(json[:destination]).to eql("3833 Vrain St, Denver, CO 80212, USA")
 
-    expect(location1).to have_key :origin
-    expect(location1[:origin]).to eql("1756 Blake St, Denver, CO 80202, USA")
+    expect(json).to have_key :distance
+    expect(json[:distance][:text]).to eql("5.8 km")
 
-    expect(location1).to have_key :destination
-    expect(location1[:destination]).to eql("3833 Vrain St, Denver, CO 80212, USA")
-
-    expect(location1).to have_key :distance
-    expect(location1[:distance]).to eql("3.6 mi")
-
-    expect(location1).to have_key :duration
-    expect(location1[:duration]).to eql("11 mins")
+    expect(json).to have_key :duration
+    expect(json[:duration][:text]).to eql("11 mins")
   end
 end
