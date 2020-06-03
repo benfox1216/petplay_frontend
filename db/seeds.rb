@@ -16,7 +16,7 @@ user_2.pets.create!(name: 'Durst', species: 'Dog', breed: 'Mixed', size: 'medium
 user_2.pets.create!(name: 'Little Devil', species: 'Cat', breed: 'Mixed', size: 'large', age: 7, about_me: 'Where am I?')
 
 #pet_plays
-user_1.pet_plays.create!(title: 'Big Dogs + Cats', location: '80215', pet_players: "#{user_1.name}")
-user_1.pet_plays.create!(title: 'Any and All', location: '80516', pet_players: "#{user_1.name}")
+user_1.pet_plays.create!(title: 'Big Dogs + Cats', location: '80215', pet_players: "#{user_1.id}")
+user_1.pet_plays.create!(title: 'Any and All', location: '80516', pet_players: "#{user_1.id}")
 
-user_2.pet_plays.create!(title: 'Cats Only!', location: '80215', pet_players: "#{user_1.name}, #{user_2.name}")
+user_2.pet_plays.create!(title: 'Cats Only!', location: '80215', pet_players: "#{user_1.id}, #{user_2.id}")
