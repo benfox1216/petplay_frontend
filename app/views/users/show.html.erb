@@ -18,6 +18,8 @@
     <input type="submit" value="Add A Pet"/>
 </form>
 
+<h2>My Pets</h2>
+
 <% if @user.pets %>
   <% @user.pets.each do |pet| %>
     <div class="pet-<%= pet.id %>">
@@ -26,9 +28,9 @@
       Age: <%= pet.age %><br>
       Breed: <%= pet.breed %><br>
       Size: <%= pet.size %><br>
-      About me: <%= pet.about_me %>
-    </div>
-        <br/>
+      About me: <%= pet.about_me %><br>
+      <%= link_to "Update", edit_pet_path(pet) %>
+    </div><br/>
   <% end %>
 <% end %>
   </div>

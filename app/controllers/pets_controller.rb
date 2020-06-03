@@ -16,6 +16,21 @@ class PetsController < ApplicationController
     end
   end
   
+  def edit
+    @pet = Pet.find(params[:id])
+  end
+  
+  def update
+    pet = Pet.find(params[:id])
+    
+    if pet.update(pet_params)
+      redirect_to "/profile/#{pet.user.id}"
+    else
+      generate_flash(pet)
+      render :edit
+    end
+  end
+  
   private
   
   def pet_params
