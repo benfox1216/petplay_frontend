@@ -26,7 +26,7 @@ https://github.com/pure-css/pure/blob/master/site/static/layouts/marketing/style
 body {
     line-height: 1.7em;
     background-color: #1f8dd6;
-    color: #1f8dd6;
+    color: black;
     font-size: 16px;
 }
 
@@ -42,7 +42,7 @@ label {
 
 .pure-img-responsive {
     max-width: 100%;
-    height: auto;
+    height: 100px;
 }
 
 /*
@@ -200,6 +200,7 @@ a.pure-button-primary {
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)
  */
+ 
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
@@ -241,6 +242,13 @@ a.pure-button-primary {
 .ribbon {
     background: #2d3e50;
     color: #aaa;
+}
+
+/* add pet_players avatar syling. */
+.post-avatar {
+  border-radius: 50px;
+  float: right;
+  margin-left: 1em;
 }
 
 /* This is the class used for the footer */
@@ -306,4 +314,9 @@ a.pure-button-primary {
     .splash-head {
         font-size: 300%;
     }
+}
+
+/* flash message */
+.flash-message {
+    padding-top: 5em
 }

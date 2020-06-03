@@ -1,0 +1,12 @@
+<h2 class="content-head">There are <%= @pet_plays.count %> PetPlays near <%= current_user.zipcode %></h2>
+
+<% @pet_plays.each_with_index do |pet_play, index| %>
+  <div id="pet-play-<%= index + 1 %>">
+    <h2 class="pet-play-head"><%= pet_play.title %></h2>
+  
+    <div class="pet-players-wrapper">
+    <%binding.pry%>
+      <%= link_to image_tag(pet_play.pet_players), "/profile/#{current_user.id}", class: 'post-avatar' %>
+    </div>
+  </div>
+<% end %>
