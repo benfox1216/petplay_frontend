@@ -1,6 +1,6 @@
-<h3>Add A Pet:</h3>
+<h3>Update <%= @pet.name %>'s Info</h3>
 
-<%= form_for [@pet] do |f| %>
+<%= form_for @pet do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :species %>
@@ -14,5 +14,5 @@
   <%= f.label :about_me %>
   <%= f.text_area :about_me %><br>
 
-  <%= f.submit "Add Pet"%>
+  <%= f.submit "Update Pet"%>
 <% end %>

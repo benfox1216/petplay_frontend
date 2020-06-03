@@ -1,15 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'As a user' do
-  it 'can see nearby PetPlays when I visit /search' do
+  it 'can see nearby PetPlays when I visit /petplays' do
     user = create(:user, zipcode: '80202')
-
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     petplayer1A = create(:user, zipcode: '80012')
-
     petplayer1B = create(:user, zipcode: '80012')
-
     petplayer1C = create(:user, zipcode: '80012')
 
     petplay1 = PetPlay.create(title: 'PetPlay Test 1',
@@ -18,9 +15,7 @@ RSpec.describe 'As a user' do
                               user_id: petplayer1A.id)
 
     petplayer2A = create(:user, zipcode: '80202')
-
     petplayer2B = create(:user, zipcode: '80202')
-
     petplayer2C = create(:user, zipcode: '80202')
 
     petplay2 = PetPlay.create(title: 'PetPlay Test 2',
@@ -29,9 +24,7 @@ RSpec.describe 'As a user' do
                               user_id: petplayer2A.id)
 
     petplayer3A = create(:user, zipcode: '80012')
-
     petplayer3B = create(:user, zipcode: '80012')
-
     petplayer3C = create(:user, zipcode: '80012')
 
     petplay3 = PetPlay.create(title: 'PetPlay Test 3',
@@ -75,4 +68,3 @@ RSpec.describe 'As a user' do
     end
   end
 end
-

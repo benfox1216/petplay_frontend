@@ -17,12 +17,16 @@
 
 <div class="header">
   <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-    <%= link_to 'PetPlays:MVP', "/", class: 'pure-menu-heading' %>
-
-    <ul class="pure-menu-list">
-      <li class="pure-menu-item"><%= link_to 'Main', "/", class: 'pure-menu-link' %></li>
-      <li class="pure-menu-item"><%= link_to 'Log Out', "/logout", method: 'delete', class: 'pure-menu-link' %></li>
-    </ul>
+    <% if current_user %>
+      <%= link_to 'PetPlay', "/profile/#{current_user.id}", class: 'pure-menu-heading' %>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item"><%= link_to 'Nearby PetPlays', "/petplays", class: 'pure-menu-link' %></li>
+        <li class="pure-menu-item"><%= link_to 'Profile', "/profile/#{current_user.id}", class: 'pure-menu-link' %></li>
+        <li class="pure-menu-item"><%= link_to 'Log Out', "/logout", method: 'delete', class: 'pure-menu-link' %></li>
+      </ul>
+    <% else %>
+      <%= link_to 'PetPlay', "/", class: 'pure-menu-heading' %>
+    <% end %>
   </div>
 </div>
 <section>
