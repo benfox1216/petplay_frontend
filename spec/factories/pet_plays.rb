@@ -3,7 +3,7 @@ FactoryBot.define do
     association :user
 
     title { Faker::Book.title }
-    pet_players { "List of users attending" }
+    pet_players { user.id }
     location { "Burberry Park" }
   end
 end
