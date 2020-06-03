@@ -44,6 +44,7 @@ gem 'validates_zipcode'
 
 group :test do
   gem 'webmock'
+  gem 'simplecov', require: false
 end
 
 group :development, :test do
