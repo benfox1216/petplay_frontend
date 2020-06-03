@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'google#create'
   
-  resources :pets, only: [:new, :create, :edit, :update]
+  resources :pets, only: [:new, :create, :edit, :update, :destroy]
   
   get "/auth/failure", to: "google#create"
   delete "/logout" => "google#destroy"

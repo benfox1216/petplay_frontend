@@ -30,6 +30,7 @@
       Size: <%= pet.size %><br>
       About me: <%= pet.about_me %><br>
       <%= link_to "Update", edit_pet_path(pet) %>
+      <%= link_to "Remove", pet_path(pet), method: :delete %>
     </div><br/>
   <% end %>
 <% end %>
