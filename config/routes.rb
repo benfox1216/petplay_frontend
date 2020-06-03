@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   
   get "/auth/failure", to: "google#create"
   delete "/logout" => "google#destroy"
+  
+  resources :petplays, only: [:index, :show]
 
-  get '/petplays', to: 'pet_plays#index'
-  get '/petplays/:id', to: 'pet_plays#show'
+  # get '/petplays', to: 'pet_plays#index'
+  # get '/petplays/:id', to: 'pet_plays#show'
 end
