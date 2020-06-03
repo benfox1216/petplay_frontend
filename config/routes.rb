@@ -11,13 +11,12 @@ Rails.application.routes.draw do
   
   get '/auth/:provider/callback', to: 'google#create'
   
-  resources :pets, only: [:new, :create]
+  resources :pets, only: [:new, :create, :edit, :update, :destroy]
   
   get "/auth/failure", to: "google#create"
   delete "/logout" => "google#destroy"
   
-  get '/petplays', to: 'pet_plays#index'
   get '/pet_plays/new', to: 'pet_plays#new'
   post '/pet_plays', to: 'pet_plays#create'
-  get '/petplays/:id', to: 'pet_plays#show'
+  resources :petplays, only: [:index, :show]
 end

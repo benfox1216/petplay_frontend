@@ -1,0 +1,10 @@
+<h2>PetPlay: <%= @pet_play.title %></h2>
+<h3>Created By: <%= @pet_play.user.name %></h3>
+<p>Location: <%= @pet_play.location %></p>
+<p>
+  Attending: <% if @pet_play.pet_players %>
+               <%= list_pet_players(@pet_play.pet_players).join(", ")%>
+             <% else %>
+               None
+             <% end %>
+</p>
