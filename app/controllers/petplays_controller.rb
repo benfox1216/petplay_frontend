@@ -1,30 +1,30 @@
 class PetplaysController < ApplicationController
   def index
-    @pet_plays = PetPlay.where(location: current_user.zipcode)
+    @petplays = Petplay.where(location: current_user.zipcode)
   end
   
   def show
-    @pet_play = PetPlay.find(params[:id])
+    @petplay = Petplay.find(params[:id])
   end
 
   def new
-    @pet_play =  PetPlay.new(pp_params)
-  end 
+    @petplay =  Petplay.new
+  end
 
-  def create 
-    pet_play = PetPlay.new(title: params["pet_play"]["title"], 
-                           date: params["pet_play"]["date"],
-                           time: params["pet_play"]["time"],
+  def create
+    petplay = Petplay.new(title: params["petplay"]["title"],
+                           date: params["petplay"]["date"],
+                           time: params["petplay"]["time"],
                            user_id: current_user.id,
                            location: current_user.zipcode,
                            pet_players: current_user.image)
-    pet_play.save
+    petplay.save
     flash[:success] = "You have created a PetPlay!"
     redirect_to '/petplays'
-  end 
+  end
 
-  private 
+  private
   def pp_params
-    params.permit(:title, :date, :time)
+    params.permit(:title, :location, :date, :time)
   end
 end

@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates_presence_of :name, :email, :image
   
   has_many :pets, dependent: :destroy
-  has_many :pet_plays, dependent: :destroy
+  has_many :petplays, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(email: auth.info.email).first_or_initialize do |user|
@@ -12,5 +12,10 @@ class User < ApplicationRecord
       user.image = auth.info.image
       user.google_token = auth.credentials.token
     end
+  end
+  
+  def parks(zipcode)
+    response = SinatraService.new
+    response.sinatra_json("/api/v1/parks?location=#{zipcode}")[:parks]
   end
 end

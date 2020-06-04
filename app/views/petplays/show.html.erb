@@ -1,9 +1,9 @@
-<h2>PetPlay: <%= @pet_play.title %></h2>
-<h3>Created By: <%= @pet_play.user.name %></h3>
-<p>Location: <%= @pet_play.location %></p>
+<h2>PetPlay: <%= @petplay.title %></h2>
+<h3>Created By: <%= @petplay.user.name %></h3>
+<p>Location: <%= @petplay.location %></p>
 <p>
-  Attending: <% if @pet_play.pet_players %>
-               <%= list_pet_players(@pet_play.pet_players).join(", ")%>
+  Attending: <% if @petplay.pet_players %>
+               <%= link_to image_tag(@petplay.pet_players), "/profile/#{current_user.id}", class: 'post-avatar' %>
              <% else %>
                None
              <% end %>

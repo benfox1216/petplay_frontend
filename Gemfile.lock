@@ -258,6 +258,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  faraday
   figaro
   jbuilder (~> 2.5)
   launchy
