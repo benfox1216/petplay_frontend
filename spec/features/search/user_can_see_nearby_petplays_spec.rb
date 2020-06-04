@@ -11,7 +11,7 @@ RSpec.describe 'As a user' do
 
     petplay1 = create(:petplay,
                       title: 'PetPlay Test 1',
-                      pet_players: "#{petplayer1A.id}, #{petplayer1B.id}, #{petplayer1C.id}",
+                      pet_players: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ba-bamail.com%2Fcontent.aspx%3Femailid%3D22163&psig=AOvVaw0U1kVPt5PeukVQqP3H3IWF&ust=1591379683222000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKDGnMLd6OkCFQAAAAAdAAAAABAD",
                       location: '80202',
                       date: "10/02/2020",
                       time: "10:00 AM",
@@ -23,7 +23,7 @@ RSpec.describe 'As a user' do
 
     petplay2 = create(:petplay,
                       title: 'PetPlay Test 2',
-                      pet_players: "#{petplayer2A.id}, #{petplayer2B.id}, #{petplayer2C.id}",
+                      pet_players: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ba-bamail.com%2Fcontent.aspx%3Femailid%3D22163&psig=AOvVaw0U1kVPt5PeukVQqP3H3IWF&ust=1591379683222000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKDGnMLd6OkCFQAAAAAdAAAAABAD",
                       location: '80202',
                       date: "10/02/2020",
                       time: "10:00 AM",
@@ -35,7 +35,7 @@ RSpec.describe 'As a user' do
 
     petplay3 = create(:petplay,
                       title: 'PetPlay Test 3',
-                      pet_players: "#{petplayer3A.id}, #{petplayer3B.id}, #{petplayer3C.id}",
+                      pet_players: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ba-bamail.com%2Fcontent.aspx%3Femailid%3D22163&psig=AOvVaw0U1kVPt5PeukVQqP3H3IWF&ust=1591379683222000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKDGnMLd6OkCFQAAAAAdAAAAABAD",
                       location: '80202',
                       date: "10/02/2020",
                       time: "10:00 AM",
@@ -47,32 +47,14 @@ RSpec.describe 'As a user' do
     expect(page).to have_content('There are 3 PetPlays near 80202')
     within "#pet-play-1" do
       expect(page).to have_content("#{petplay1.title}")
-
-      within('.pet-players-wrapper') do
-        expect(page).to have_content("#{petplayer1A.name}")
-        expect(page).to have_content("#{petplayer1B.name}")
-        expect(page).to have_content("#{petplayer1C.name}")
-      end
     end
 
     within('#pet-play-2') do
       expect(page).to have_content("#{petplay2.title}")
-
-      within('.pet-players-wrapper') do
-        expect(page).to have_content("#{petplayer2A.name}")
-        expect(page).to have_content("#{petplayer2B.name}")
-        expect(page).to have_content("#{petplayer2C.name}")
-      end
     end
 
     within('#pet-play-3') do
       expect(page).to have_content("#{petplay3.title}")
-
-      within('.pet-players-wrapper') do
-        expect(page).to have_content("#{petplayer3A.name}")
-        expect(page).to have_content("#{petplayer3B.name}")
-        expect(page).to have_content("#{petplayer3C.name}")
-      end
     end
   end
 end

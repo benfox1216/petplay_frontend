@@ -17,7 +17,7 @@ class PetplaysController < ApplicationController
                            time: params["petplay"]["time"],
                            user_id: current_user.id,
                            location: current_user.zipcode,
-                           pet_players: current_user.id)
+                           pet_players: current_user.image)
     petplay.save
     flash[:success] = "You have created a PetPlay!"
     redirect_to '/petplays'
