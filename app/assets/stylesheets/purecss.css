@@ -200,6 +200,7 @@ a.pure-button-primary {
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)
  */
+ 
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
@@ -241,6 +242,13 @@ a.pure-button-primary {
 .ribbon {
     background: #2d3e50;
     color: #aaa;
+}
+
+/* add pet_players avatar syling. */
+.post-avatar {
+  border-radius: 50px;
+  float: right;
+  margin-left: 1em;
 }
 
 /* This is the class used for the footer */

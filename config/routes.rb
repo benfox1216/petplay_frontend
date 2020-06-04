@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post '/profile/:id/zip', to: 'users#zip'
 
   get '/login', to: 'sessions#show'
-
+  
+  
   get '/auth/:provider/callback', to: 'google#create'
   
   resources :pets, only: [:new, :create, :edit, :update, :destroy]
@@ -15,8 +16,7 @@ Rails.application.routes.draw do
   get "/auth/failure", to: "google#create"
   delete "/logout" => "google#destroy"
   
+  get '/pet_plays/new', to: 'pet_plays#new'
+  post '/pet_plays', to: 'pet_plays#create'
   resources :petplays, only: [:index, :show]
-
-  # get '/petplays', to: 'pet_plays#index'
-  # get '/petplays/:id', to: 'pet_plays#show'
 end

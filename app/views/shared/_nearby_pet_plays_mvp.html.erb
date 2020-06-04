@@ -7,9 +7,8 @@
     </h2>
     PetPlayers:
     <div class="pet-players-wrapper">
-      <% list_pet_players(pet_play.pet_players).each do |player| %>
-        <p class="player-name"><%= player %></p>
-      <% end %>
+    <%binding.pry%>
+      <%= link_to image_tag(pet_play.pet_players), "/profile/#{current_user.id}", class: 'post-avatar' %>
     </div>
   </div>
 <% end %>

@@ -36,7 +36,6 @@ RSpec.describe 'As a user' do
 
     expect(current_path).to eql('/petplays')
     expect(page).to have_content('There are 3 PetPlays near 80202')
-
     within "#pet-play-1" do
       expect(page).to have_content("#{petplay1.title}")
 
