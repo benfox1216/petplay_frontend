@@ -5,7 +5,7 @@
     <h2 class="pet-play-head">
       <%= petplay.title %> (<%= link_to "more info", petplay_path(petplay) %>)
     </h2>
-    pet_players:
+    PetPlayers:
     <div class="pet-players-wrapper">
       <% list_pet_players(petplay.pet_players).each do |player| %>
         <p class="player-name"><%= player %></p>
