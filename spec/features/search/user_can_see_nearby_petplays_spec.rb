@@ -12,6 +12,8 @@ RSpec.describe 'As a user' do
     petplay1 = PetPlay.create(title: 'PetPlay Test 1',
                               pet_players: "#{petplayer1A.id}, #{petplayer1B.id}, #{petplayer1C.id}",
                               location: '80202',
+                              date: "10/02/2020",
+                              time: "10:00 AM",
                               user_id: petplayer1A.id)
 
     petplayer2A = create(:user, zipcode: '80202')
@@ -21,6 +23,8 @@ RSpec.describe 'As a user' do
     petplay2 = PetPlay.create(title: 'PetPlay Test 2',
                               pet_players: "#{petplayer2A.id}, #{petplayer2B.id}, #{petplayer2C.id}",
                               location: '80202',
+                              date: "10/02/2020",
+                              time: "10:00 AM",
                               user_id: petplayer2A.id)
 
     petplayer3A = create(:user, zipcode: '80012')
@@ -30,6 +34,8 @@ RSpec.describe 'As a user' do
     petplay3 = PetPlay.create(title: 'PetPlay Test 3',
                               pet_players: "#{petplayer3A.id}, #{petplayer3B.id}, #{petplayer3C.id}",
                               location: '80202',
+                              date: "10/02/2020",
+                              time: "10:00 AM",
                               user_id: petplayer3A.id)
 
     visit '/petplays'
