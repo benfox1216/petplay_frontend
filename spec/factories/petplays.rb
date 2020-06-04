@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :pet_play do
+  factory :petplay do
     association :user
 
     title { Faker::Book.title }

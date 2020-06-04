@@ -1,21 +1,20 @@
 <h3>Add A PetPlay:</h3>
 
-  <%= form_for @pet_play do |f| %>
-  <%= f.label :Title %> 
-  <%= f.text_field :title %><br>
-  <%= f.label :Date %>
-  <%= f.date_field("date", min: Date.today) %><br>
-  <%= f.label :Time %>
-  <%= f.time_field("time", min: Time.now.to_i) %><br>
+  <%= form_for @petplay do |f| %>
+    <%= f.label :Title %>
+    <%= f.text_field :title %><br>
+    <%= f.label :Date %>
+    <%= f.date_field("date", min: Date.today) %><br>
+    <%= f.label :Time %>
+    <%= f.time_field("time", min: Time.now.to_i) %><br>
 
-    <section class="pets">
-      <% current_user.pets.each do |pet| %>
-              <tr id="pet-<%= pet.id %>">
-                <td><%="#{pet.name}"%><%= check_box_tag "pet", {name:pet.name, id:pet.id}, :class => "check-box" %></td><br>
-              </tr>
-      <% end %>
-      <%= submit_tag "Add PetPlay", class: "button" %>
+<section class="pets">
+    <% current_user.pets.each do |pet| %>
+      <tr id="pet-<%= pet.id %>">
+        <td><%="#{pet.name}"%><%= check_box_tag "pet_ids[]", pet.id, false, :class => "check-box" %></td><br>
+      </tr>
     <% end %>
-  </section>
-
-
+    
+    <%= f.submit "Add PetPlay" %>
+  <% end %>
+</section>

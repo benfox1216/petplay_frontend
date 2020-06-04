@@ -6,11 +6,11 @@ describe "As a user" do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      pet_play = create(:pet_play, user_id: user.id)
+      petplay = create(:petplay, user_id: user.id)
 
-      visit "/petplays/#{pet_play.id}"
+      visit "/petplays/#{petplay.id}"
 
-      expect(page).to have_content("PetPlay: #{pet_play.title}")
+      expect(page).to have_content("PetPlay: #{petplay.title}")
       expect(page).to have_content("Created By: #{user.name}")
       expect(page).to have_content('Location: Burberry Park')
       expect(page).to have_content('Attending:')
@@ -22,13 +22,13 @@ describe "As a user" do
     user_2 = create(:user)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
-    pet_play_1 = create(:pet_play, user_id: user_1.id)
-    pet_play_2 = create(:pet_play, user_id: user_1.id)
-    pet_play_3 = create(:pet_play, user_id: user_2.id)
+    petplay_1 = create(:petplay, user_id: user_1.id)
+    petplay_2 = create(:petplay, user_id: user_1.id)
+    petplay_3 = create(:petplay, user_id: user_2.id)
 
-    visit "/petplays/#{pet_play_2.id}"
+    visit "/petplays/#{petplay_2.id}"
 
-    expect(page).to have_content("PetPlay: #{pet_play_2.title}")
+    expect(page).to have_content("PetPlay: #{petplay_2.title}")
     expect(page).to have_content("Created By: #{user_1.name}")
     expect(page).to have_content('Location: Burberry Park')
     expect(page).to have_content('Attending:')

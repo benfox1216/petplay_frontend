@@ -1,13 +1,15 @@
-<h2 class="content-head">There are <%= @pet_plays.count %> PetPlays near <%= current_user.zipcode %></h2>
+<h2 class="content-head">There are <%= @petplays.count %> PetPlays near <%= current_user.zipcode %></h2>
 
-<% @pet_plays.each_with_index do |pet_play, index| %>
+<% @petplays.each_with_index do |petplay, index| %>
   <div id="pet-play-<%= index + 1 %>">
     <h2 class="pet-play-head">
-      <%= pet_play.title %> (<%= link_to "more info", petplay_path(pet_play) %>)
+      <%= petplay.title %> (<%= link_to "more info", petplay_path(petplay) %>)
     </h2>
-    PetPlayers:
+    pet_players:
     <div class="pet-players-wrapper">
-      <%= link_to image_tag(pet_play.pet_players), "/profile/#{current_user.id}", class: 'post-avatar' %>
+      <% list_pet_players(petplay.pet_players).each do |player| %>
+        <p class="player-name"><%= player %></p>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20200602015401) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pet_plays", force: :cascade do |t|
+  create_table "petplays", force: :cascade do |t|
     t.string "title"
     t.string "pet_players"
     t.string "location"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20200602015401) do
     t.bigint "user_id"
     t.string "date"
     t.string "time"
-    t.index ["user_id"], name: "index_pet_plays_on_user_id"
+    t.index ["user_id"], name: "index_petplays_on_user_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -50,6 +50,6 @@ ActiveRecord::Schema.define(version: 20200602015401) do
     t.string "zipcode", default: "00000"
   end
 
-  add_foreign_key "pet_plays", "users"
+  add_foreign_key "petplays", "users"
   add_foreign_key "pets", "users"
 end
