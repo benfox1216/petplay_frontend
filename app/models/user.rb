@@ -13,4 +13,9 @@ class User < ApplicationRecord
       user.google_token = auth.credentials.token
     end
   end
+  
+  def parks(zipcode)
+    response = SinatraService.new
+    response.sinatra_json("/api/v1/parks?location=#{zipcode}")[:parks]
+  end
 end

@@ -37,6 +37,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'figaro'
 gem 'rake'
+gem 'faraday'
 
 # User PureCSS Framework
 gem 'purecss-rails'

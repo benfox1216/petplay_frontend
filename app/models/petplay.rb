@@ -6,5 +6,7 @@ class Petplay < ApplicationRecord
                         :time
   validates :pet_players, presence: false
 
-
+  def parks
+    binding.pry
+  end
 end
