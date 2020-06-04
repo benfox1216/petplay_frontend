@@ -1,4 +1,4 @@
-<h3>Add A PetPlay:</h3>
+<h2>Add A PetPlay:</h2>
 
   <%= form_for @petplay do |f| %>
     <%= f.label :Title %>
@@ -8,14 +8,14 @@
     <%= f.label :Time %>
     <%= f.time_field("time", min: Time.now.to_i) %><br>
 
-<h2>Pets I'm Bringing</h2>
+<h3>Pets I'm Bringing</h3>
 <section class="pets">
     <% current_user.pets.each do |pet| %>
       <tr id="pet-<%= pet.id %>">
         <td><%="#{pet.name}"%><%= check_box_tag "pet_ids[]", pet.id, false, :class => "check-box" %></td><br>
       </tr>
     <% end %>
-<h2>Parks in <%= current_user.zipcode %></h2>
+<h3>Parks in <%= current_user.zipcode %></h3>
     <% current_user.parks(current_user.zipcode).each do |park| %>
       <tr id="park-<%= park[:name] %>">
         <td><%="#{park[:name]}"%><%= radio_button_tag "parks", "#{park[:name]}, #{park[:lat_lng]}", false, :class => "check-box" %></td><br>
