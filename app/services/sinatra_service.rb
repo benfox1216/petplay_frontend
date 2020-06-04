@@ -10,7 +10,7 @@ class SinatraService
   end
   
   def response(uri)
-    url = 'http://localhost:3001'
+    url = ENV['PETPLAY_DOMAIN']
     Faraday.get("#{url}/#{uri}")
   end
 end
