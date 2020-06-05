@@ -1,6 +1,6 @@
 <h2>PetPlay: <%= @petplay.title %></h2>
 <h3>Created By: <%= @petplay.user.name %></h3>
-<p>Location: <%= @petplay.location %></p>
+<p>Location: <%= @petplay.park_address %></p>
 <p>
   Attending: <% if @petplay.pet_players %>
                <%= link_to image_tag(@petplay.pet_players), "/profile/#{current_user.id}", class: 'post-avatar' %>

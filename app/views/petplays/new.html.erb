@@ -7,6 +7,7 @@
     <%= f.date_field("date", min: Date.today) %><br>
     <%= f.label :Time %>
     <%= f.time_field("time", min: Time.now.to_i) %><br>
+  <%= f.submit "Add PetPlay" %>
 
 <h3>Pets I'm Bringing</h3>
 <section class="pets">
@@ -22,6 +23,5 @@
       </tr>
     <% end %>
     
-    <%= f.submit "Add PetPlay" %>
   <% end %>
 </section>
