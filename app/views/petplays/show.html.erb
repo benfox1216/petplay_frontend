@@ -7,9 +7,6 @@
     <h3>Attending:</h3>
       <% if @petplay.pet_players %>
         <%= link_to image_tag(@petplay.pet_players, class: 'post-avatar'), "/profile/#{current_user.id}" %>
-      <% else %>
-        None
-                 <% end %>
-
+     <% end %>
   </div>
 </div>
