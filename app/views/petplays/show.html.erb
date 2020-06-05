@@ -3,7 +3,7 @@
     <h2 class="page-title is-center content-head">PetPlay</h2>
     <h3><%= @petplay.title %></h3>
     <h3>Created By: <%= @petplay.user.name %></h3>
-    <h3>Location: <%= @petplay.location %></h3>
+    <h3>Location: <%= @petplay.park_address %></h3>
     <h3>Attending:</h3>
       <% if @petplay.pet_players %>
         <%= link_to image_tag(@petplay.pet_players, class: 'post-avatar'), "/profile/#{current_user.id}" %>

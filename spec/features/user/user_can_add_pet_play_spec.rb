@@ -21,19 +21,20 @@
 #     within "#pet-play-1" do
 #       expect(page).to have_content('Smallpups')
 #     end
-#     binding.pry
+#
 #     click_button 'Create PetPlay'
 #
 #     expect(current_path).to eq('/petplays/new')
 #
-#     within ".new_petplay" do
-#       fill_in 'petplay_title', with: 'BigPups'
-#       fill_in 'petplay_date', with: '10/02/2020'
-#       fill_in 'petplay_time', with: '10:00 AM'
-#       within "#pet-#{pet_2.id}" do
-#         check("pet_ids[]", allow_label_click: true)
-#       end
+#     fill_in 'petplay_title', with: 'BigPups'
+#     fill_in 'petplay_date', with: '10/02/2020'
+#     fill_in 'petplay_time', with: '10:00 AM'
+#
+#     within "#pet-#{pet_2.id}" do
+#       check("pet_ids[]", allow_label_click: true)
 #     end
+#
+#     choose("Commons Park")
 #
 #     click_button ('Add PetPlay')
 #

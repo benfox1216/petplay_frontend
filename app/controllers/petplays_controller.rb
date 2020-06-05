@@ -12,7 +12,7 @@ class PetplaysController < ApplicationController
   end
 
   def create
-    coords = params[:parks].tr('^0-9-.,', '')
+    coords = params["parks"].tr('^0-9-.,', '')
     coords[0] = ''
     latlng = coords
     google = GoogleService.new
