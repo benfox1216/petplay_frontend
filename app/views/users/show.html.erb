@@ -11,10 +11,12 @@
         <h2><%= @user.name %></h2>
         <h3><%= @user.email %></h3>
         <% if @user.zipcode == '00000' %>
-          <%= form_with(url: "/profile/#{@user.id}/zip") do %>
-            <%= label_tag("Enter Zipcode") %>
-            <%= text_field_tag(:zipcode) %>
-            <%= submit_tag("Submit") %>
+          <%= form_with(url: "/profile/#{@user.id}/zip") do |f| %>
+          <section class="pure-form pure-form-aligned">
+            <%= f.label("Enter Zipcode") %>
+            <%= f.text_field(:zipcode, class: "pure-input-rounded") %>
+            <%= f.submit("Submit", class: "pure-button button-large") %>
+          </section>
           <% end %>
         <% else %>
           <h3>Zipcode: <%= @user.zipcode %></h3>
