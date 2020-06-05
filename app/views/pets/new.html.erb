@@ -1,18 +1,8 @@
-<h3>Add A Pet:</h3>
-
-<%= form_for @pet do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <%= f.label :species %>
-  <%= f.text_field :species %><br>
-  <%= f.label :age %>
-  <%= f.text_field :age %><br>
-  <%= f.label :breed %>
-  <%= f.text_field :breed %><br>
-  <%= f.label :size %>
-  <%= f.select :size, [['Small'], ['Medium'], ['Large']]%><br>
-  <%= f.label :about_me %>
-  <%= f.text_area :about_me %><br>
-
-  <%= f.submit "Add Pet"%>
-<% end %>
+<div class="content-container">
+  <div class="content">
+    <h1 class="page-title is-center content-head">Add A Pet</h1>
+    <section class="add-pet-form">
+      <%= render 'form' %>
+    </section>
+  </div>
+</div>

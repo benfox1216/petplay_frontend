@@ -1,0 +1,15 @@
+<%= form_for @pet, html: { class: "pure-form pure-form-aligned" } do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field(:name, class: "pure-input-rounded") %>
+  <%= f.label :species %>
+  <%= f.text_field(:species, class: "pure-input-rounded") %>
+  <%= f.label :age %>
+  <%= f.text_field(:age, class: "pure-input-rounded") %>
+  <%= f.label :breed %>
+  <%= f.text_field(:breed, class: "pure-input-rounded") %>
+  <%= f.label :size %>
+  <%= f.select :size, [['Small'], ['Medium'], ['Large']]%>
+  <%= f.label :about_me %>
+  <%= f.text_area :about_me %>
+  <%= f.submit class: "pure-button button-xlarge" %>
+<% end %>
