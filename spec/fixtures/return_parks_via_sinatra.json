@@ -1,0 +1,39 @@
+{
+  "parks": [
+    {
+      "name": "Dove Valley Regional Park",
+      "lat_lng": {
+        "lat": 39.575607,
+        "lng": -104.826008
+      }
+    },
+    {
+      "name": "Willow Creek Park",
+      "lat_lng": {
+        "lat": 39.5716375,
+        "lng": -104.898877
+      }
+    },
+    {
+      "name": "Cherry Creek Valley Ecological Park",
+      "lat_lng": {
+        "lat": 39.5822885,
+        "lng": -104.8038771
+      }
+    },
+    {
+      "name": "Willow Spring Open Space",
+      "lat_lng": {
+        "lat": 39.5883672,
+        "lng": -104.9220783
+      }
+    },
+    {
+      "name": "Foxridge Park",
+      "lat_lng": {
+        "lat": 39.574943,
+        "lng": -104.9088484
+      }
+    }
+  ]
+}
