@@ -8,7 +8,7 @@ RSpec.describe 'As a User' do
     visit "/profile/#{user.id}"
 
     expect(page).to have_content(user.name)
-    expect(page).to have_content("Email: #{user.email}")
+    expect(page).to have_content("#{user.email}")
 
     fill_in :zipcode, with: '80012'
     click_button 'Submit'
