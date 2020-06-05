@@ -26,7 +26,7 @@ https://github.com/pure-css/pure/blob/master/site/static/layouts/marketing/style
 body {
     line-height: 1.7em;
     background-color: #1f8dd6;
-    color: black;
+    color: white;
     font-size: 16px;
 }
 
@@ -38,6 +38,11 @@ h5,
 h6,
 label {
     color: #34495e;
+}
+
+.page-title {
+    font-size: 4em;
+    margin-top: 0;
 }
 
 .pure-img-responsive {
@@ -99,8 +104,31 @@ a.pure-button-primary {
     font-size: 120%;
 }
 
-.button-xxlarge {
+.button-xlarge {
+    background: rgb(28, 184, 65);
+}
+
+.pure-form input[type=submit] {
+    background: rgb(28, 184, 65);
+    border: 0;
+    margin: 0.5em 0;
+    width: 100%;
     font-size: 200%;
+}
+
+form#new_petplay input[type=submit] {
+    background: rgb(28, 184, 65);
+    margin: 1em 3em;
+    width: 100%;
+}
+
+form#new_petplay input[type=submit], .button-xxlarge {
+    font-size: 200%;
+}
+
+.button-success {
+    background: rgb(28, 184, 65);
+    /* this is a green */
 }
 
 .button-warning {
@@ -147,7 +175,6 @@ a.pure-button-primary {
     border: none;
     color: #AECFE5;
 }
-
 
 /*
  * -- SPLASH STYLES --
@@ -200,7 +227,7 @@ a.pure-button-primary {
  * -- CONTENT STYLES --
  * This represents the content area (everything below the blue section)
  */
- 
+
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
     position: absolute;
@@ -217,12 +244,15 @@ a.pure-button-primary {
     padding: 1em 1em 3em;
 }
 
+.content-container {
+    padding: 1em 10%;
+}
+
 /* This is the class used for the main content headers (<h2>) */
 .content-head {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin: 2em 0 1em;
 }
 
 /* This is a modifier class used when the content-head is inside a ribbon */
@@ -238,22 +268,74 @@ a.pure-button-primary {
         margin-right: 7px;
     }
 
+.my-pets {
+    margin: 0;
+}
+
+.my-parks {
+    margin: 2em 0;
+}
+
+.pet-container {
+    border: 1px solid white;
+    margin: 0.5em 0em;
+    padding: 0.25em 1em;
+}
+
+.text-stack {
+    margin: 0.25em;
+}
+
+/* Form Styles */
+
+
+select,
+.pure-form input[type],
+form input[type=text],
+textarea,
+form input[type=date],
+form input[type=time] {
+    color: black;
+    width: 100%;
+}
+
+.add-pet-form {
+    padding: 0 25%;
+}
+
+.stacked-sections {
+    padding: 0.5em 5em;
+}
+
 /* This is the class used for the dark-background areas. */
 .ribbon {
     background: #2d3e50;
     color: #aaa;
 }
 
+/* User Styles */
+
+/* user image */
+
+.user-profile-avatar {
+    float: right;
+    height: 10em;
+    padding: 0em 1em;
+}
+
+
 /* add pet_players avatar syling. */
 .post-avatar {
   border-radius: 50px;
-  float: right;
+  height: 5em;
+  width: 5em;
   margin-left: 1em;
 }
 
 /* This is the class used for the footer */
 .footer {
     background: #0c2340;
+    color: white;
     position: fixed;
     bottom: 0;
     width: 100%;

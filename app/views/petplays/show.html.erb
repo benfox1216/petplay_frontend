@@ -1,10 +1,12 @@
-<h2>PetPlay: <%= @petplay.title %></h2>
-<h3>Created By: <%= @petplay.user.name %></h3>
-<p>Location: <%= @petplay.park_address %></p>
-<p>
-  Attending: <% if @petplay.pet_players %>
-               <%= link_to image_tag(@petplay.pet_players), "/profile/#{current_user.id}", class: 'post-avatar' %>
-             <% else %>
-               None
-             <% end %>
-</p>
+<div class="content-container">
+  <div class="content">
+    <h2 class="page-title is-center content-head">PetPlay</h2>
+    <h3><%= @petplay.title %></h3>
+    <h3>Created By: <%= @petplay.user.name %></h3>
+    <h3>Location: <%= @petplay.location %></h3>
+    <h3>Attending:</h3>
+      <% if @petplay.pet_players %>
+        <%= link_to image_tag(@petplay.pet_players, class: 'post-avatar'), "/profile/#{current_user.id}" %>
+     <% end %>
+  </div>
+</div>

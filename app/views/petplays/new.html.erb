@@ -1,27 +1,39 @@
-<h2>Add A PetPlay:</h2>
+<div class="content-container">
+  <div class="content">
+    <h1 class="page-title is-center content-head">Add A PetPlay</h1>
 
-  <%= form_for @petplay do |f| %>
-    <%= f.label :Title %>
-    <%= f.text_field :title %><br>
-    <%= f.label :Date %>
-    <%= f.date_field("date", min: Date.today) %><br>
-    <%= f.label :Time %>
-    <%= f.time_field("time", min: Time.now.to_i) %><br>
-  <%= f.submit "Add PetPlay" %>
+    <%= form_for @petplay do |f| %>
+      <div class="pure-g">
+        <section class="pure-u-1-3 pure-form pure-form-aligned">
+          <h2 class="is-center">Event Date</h3>
+            <%= f.label :Title %>
+            <%= f.text_field(:title, class: "pure-input-rounded")  %><br>
+            <%= f.label :Date %>
+            <%= f.date_field("date", min: Date.today, class: "pure-input-rounded") %><br>
+            <%= f.label :Time %>
+            <%= f.time_field("time", min: Time.now.to_i, class: "pure-input-rounded") %><br>
+        </section>
 
-<h3>Pets I'm Bringing</h3>
-<section class="pets">
-    <% current_user.pets.each do |pet| %>
-      <tr id="pet-<%= pet.id %>">
-        <td><%="#{pet.name}"%><%= check_box_tag "pet_ids[]", pet.id, false, :class => "check-box" %></td><br>
-      </tr>
-    <% end %>
-<h3>Parks in <%= current_user.zipcode %></h3>
-    <% current_user.parks(current_user.zipcode).each do |park| %>
-      <tr id="park-<%= park[:name] %>">
-        <td><%="#{park[:name]}"%><%= radio_button_tag "parks", "#{park[:name]}, #{park[:lat_lng]}", false, :class => "check-box" %></td><br>
-      </tr>
-    <% end %>
-    
-  <% end %>
-</section>
+        <section class="pure-u-1-3 stacked-sections">
+          <h2 class="is-center">Pets I'm Bringing</h3>
+            <% current_user.pets.each do |pet| %>
+              <tr id="pet-<%= pet.id %>">
+                <td><%= check_box_tag "pet_ids[]", pet.id, false, :class => "pure-checkbox" %><%=" #{pet.name}"%></td><br>
+              </tr>
+            <% end %>
+        </section>
+
+        <section class="pure-u-1-3 stacked-sections">
+          <h2 class="is-center">Parks in <%= current_user.zipcode %></h3>
+            <% current_user.parks(current_user.zipcode).first(5).each do |park| %>
+              <tr id="park-<%= park[:name] %>">
+                <td><%= radio_button_tag "parks", "#{park[:name]}, #{park[:lat_lng]}", false, :class => "pure-radio" %><%=" #{park[:name]}"%></td><br>
+              </tr>
+            <% end %>
+        </section>
+
+        <%= f.submit "Add PetPlay", class: "pure-button button-xxlarge" %>
+    </div>
+      <% end %>
+  </div>
+</div>
