@@ -12,7 +12,7 @@ describe "As a user" do
 
       expect(page).to have_content("PetPlay: #{petplay.title}")
       expect(page).to have_content("Created By: #{user.name}")
-      expect(page).to have_content('Location: Burberry Park')
+      expect(page).to have_content('Location:')
       expect(page).to have_content('Attending:')
     end
   end
@@ -30,7 +30,7 @@ describe "As a user" do
 
     expect(page).to have_content("PetPlay: #{petplay_2.title}")
     expect(page).to have_content("Created By: #{user_1.name}")
-    expect(page).to have_content('Location: Burberry Park')
+    expect(page).to have_content('Location:')
     expect(page).to have_content('Attending:')
   end
 end
