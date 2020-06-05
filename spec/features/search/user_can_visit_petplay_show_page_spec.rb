@@ -10,13 +10,14 @@ describe "As a user" do
 
       visit "/petplays/#{petplay.id}"
 
-      expect(page).to have_content("PetPlay: #{petplay.title}")
+      expect(page).to have_content("PetPlay")
+      expect(page).to have_content("#{petplay.title}")
       expect(page).to have_content("Created By: #{user.name}")
       expect(page).to have_content('Location: Burberry Park')
       expect(page).to have_content('Attending:')
     end
   end
-  
+
   it "I see the correct PetPlay on the show page, and only that PetPlay" do
     user_1 = create(:user)
     user_2 = create(:user)
@@ -28,7 +29,8 @@ describe "As a user" do
 
     visit "/petplays/#{petplay_2.id}"
 
-    expect(page).to have_content("PetPlay: #{petplay_2.title}")
+    expect(page).to have_content("PetPlay")
+    expect(page).to have_content("#{petplay_2.title}")
     expect(page).to have_content("Created By: #{user_1.name}")
     expect(page).to have_content('Location: Burberry Park')
     expect(page).to have_content('Attending:')
