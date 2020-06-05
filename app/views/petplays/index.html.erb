@@ -1,6 +1,15 @@
 <div class="content-container">
   <div class="content">
-    <%= render "shared/nearby_pet_plays_mvp" %>
-    <%= button_to "Create PetPlay", "/petplays/new", method: :get, class: "pure-button button-xlarge" %>
+    <div class="pure-g">
+      <div>
+        <%= button_to "Create PetPlay", "/petplays/new", method: :get, class: "pure-button button-xlarge" %>
+      </div>
+      <div>
+        <%= button_to "Saved PetPlays", "#", class: "pure-button button-warning" %>
+      </div>
+    </div>
+    <section>
+      <%= render "shared/nearby_pet_plays_mvp" %>
+    </section>
   </div>
 </div>
