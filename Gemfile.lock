@@ -135,7 +135,8 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.5)
-    puma (3.12.6)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     purecss-rails (0.6.1)
       railties (>= 3.2.6, < 6)
     rack (2.2.2)
@@ -265,7 +266,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.7)
+  puma (~> 4.3)
   purecss-rails
   rails (~> 5.1.7)
   rake
